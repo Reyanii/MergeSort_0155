@@ -36,6 +36,7 @@ void input()
 // create function mergeasort
 void mergeSort(int low, int high)
 {
+
     if (low  >= high) // step 1
     {
         return; // step 1.a
@@ -43,6 +44,7 @@ void mergeSort(int low, int high)
 
     int mid = (low + high) / 2; // step 2
 
+    // step 3
     // fungsi rekursi - memanggil diri sendiri
     mergeSort(low, mid); // step 3.a
     mergeSort(mid + 1, high); // step 3.b
@@ -73,12 +75,15 @@ void mergeSort(int low, int high)
         j++;
         k = k + 1;
     }
+
     while (i <= mid) // step 4.e
     {
         B[k] = arr[i];
         i++;
         k++;
     }
+
+    // step 5
     for (int x = low; x <= high; x++)
     {
         arr[x] = B[x];
